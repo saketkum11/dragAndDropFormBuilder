@@ -45,10 +45,10 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-zinc-900 text-white p-4 relative">
-      <main className="grid grid-cols-12 gap-4  overflow-hidden">
-        <div className="col-span-9 ">
-          <div className="border-2 border-dashed border-white min-h-screen rounded-lg text-center flex justify-center items-center">
+    <div className="bg-zinc-900 text-white  relative min-h-screen">
+      <main className="block  lg:grid  lg:grid-cols-12 gap-4  ">
+        <div className="col-span-9 p-4">
+          <div className="border-2 border-dashed border-white  rounded-lg text-center lg:min-h-screen flex justify-center items-center">
             <div
               onDrop={(e) => {
                 e.stopPropagation();
@@ -56,9 +56,9 @@ const Home = () => {
                 handleDrop();
               }}
               onDragOver={(e) => handleOnDragOver(e)}
-              className=" bg-zinc-950 rounded-lg w-full max-w-lg  overflow-y-auto flex justify-center items-centerrounded-lg p-4"
+              className=" bg-zinc-950 rounded-lg w-full max-w-lg  max-h-96 overflow-auto  flex justify-center  p-4 "
             >
-              <div className="flex flex-col gap-4 w-full min-h-96 overflow-y-auto">
+              <div className=" flex flex-col gap-4 w-full min-h-96 ">
                 {widgets.length !== 0 ? (
                   widgets.map((item, index) => {
                     return (
@@ -78,7 +78,7 @@ const Home = () => {
                     );
                   })
                 ) : (
-                  <div className=" rounded-xl shadow-lg m-auto">
+                  <div className=" rounded-xl shadow-lg m-auto min-h-96 flex justify-center items-center">
                     <FaPlus className="text-8xl " />
                   </div>
                 )}
@@ -86,8 +86,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <aside className="col-span-3 bg-black rounded-lg h-full  overflow-hidden sticky top-0">
-          <div className="grid grid-cols-2 p-8 gap-4 ">
+        <aside className="block bg-black rounded-lg   md:col-span-3">
+          <div className="overflow-hidden  grid grid-cols-2 p-8 gap-4  lg:overflow-auto   max-h-screen ">
             <HeadingTitle setWidgets={setWidgets} handleOnDrag={handleOnDrag} />
             <HeadingSubtitle handleOnDrag={handleOnDrag} />
             <Input handleOnDrag={handleOnDrag} />

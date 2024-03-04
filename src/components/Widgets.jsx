@@ -26,14 +26,11 @@ const Widgets = ({
     const dragItem = [...allWidgets];
     // filter the item which will be  dragged
     const itemToBeDragged = dragItem[dragItemStartIndex];
+    // swap the array element
     dragItem[dragItemStartIndex] = dragItem[dragItemEnterIndex];
     dragItem[dragItemEnterIndex] = itemToBeDragged;
-    console.log(
-      `dragItemEnter index${dragItemEnterIndex} , dragitemstartindex ${dragItemStartIndex}`
-    );
     setWidgets(dragItem);
   };
-  console.log("title", dragItemStartIndex, dragItemEnterIndex);
   return (
     <>
       {widget.isInputField ? (
@@ -43,22 +40,28 @@ const Widgets = ({
           onDragEnter={() => onDragEnter(index)}
           onDragEnd={onDragEnd}
           onDragOver={(e) => e.preventDefault()}
-          className="w-full flex flex-col gap-4 text-start border bg-zinc-900 border-zinc-500 border-solid min-h-12 rounded-md p-4 relative"
+          className="w-full flexflex-col gap-4 text-start border bg-zinc-900 border-zinc-500 border-solid  rounded-md p-4 relative"
         >
-          <input
-            className="w-full bg-transparent px-4 py-2 outline-none border-b"
-            value={widget.title}
-            type="text"
-            name="title"
-            onChange={(e) => handleChange(e, widget.id)}
-          />
+          {widget.type !== "button" && (
+            <input
+              className="w-full bg-transparent px-4 py-2 outline-none border-b"
+              value={widget.title}
+              type="text"
+              name="title"
+              onChange={(e) => handleChange(e, widget.id)}
+            />
+          )}
           <input
             value={widget.textMessage}
             type={widget.type}
             required={widget.isRequired}
             name="textMessage"
             onChange={(e) => handleChange(e, widget.id)}
-            className="w-full bg-transparent px-4 py-2 outline-none border-b"
+            className={
+              widget.type === "button"
+                ? `bg-white text-zinc-800 py-2 rounded-lg mt-10 w-full`
+                : `w-full bg-transparent px-4 py-2 outline-none border-b`
+            }
           />
           <button
             className="absolute top-4 right-4"

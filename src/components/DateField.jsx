@@ -18,10 +18,10 @@ const DateField = ({ handleOnDrag }) => {
           isRequired: true,
         });
       }}
-      className="flex flex-col gap-2 overflow-hidden justify-center items-center hover:bg-zinc-800 hover:cursor-grab border border-zinc-500 border-solid px-4 py-8 rounded-lg"
+      className=" col-span-2  sm:col-span-1 lg:col-span-2 2xl:col-span-1  flex flex-col gap-2 overflow-hidden justify-center items-center hover:bg-zinc-800 hover:cursor-grab border border-zinc-500 border-solid px-4 py-8 rounded-lg"
     >
       <CiCalendarDate className="text-5xl" />
-      <p>Date Field</p>
+      <p className="text-center">Date Field</p>
     </div>
   );
 };
