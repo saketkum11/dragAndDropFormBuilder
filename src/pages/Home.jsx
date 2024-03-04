@@ -4,18 +4,19 @@ import HeadingSubtitle from "../components/HeadingSubtitle";
 import Input from "../components/Input";
 import TextArea from "../components/TextArea";
 import DateField from "../components/DateField";
-import CheckBox from "../components/CheckBox";
 import NumberField from "../components/NumberField";
 import { useState } from "react";
 import Widgets from "../components/Widgets";
 import Button from "../components/Button";
 import Password from "../components/Password";
 import EmailField from "../components/EmailField";
+import PreviewForm from "../components/PreviewForm";
 const Home = () => {
   const [widgets, setWidgets] = useState([]);
   const [dateStore, setDateStore] = useState({});
   const [dragItemStartIndex, setDagItemStartIndex] = useState(0);
   const [dragItemEnterIndex, setDragItemEnterIndex] = useState(0);
+  const [previewToggle, setPreviewToggle] = useState(false);
   const handleDrop = () => {
     if (!dateStore) return;
     setWidgets((prev) => {
@@ -43,9 +44,19 @@ const Home = () => {
     const deleteItem = [...widgets].filter((item) => item.id !== itemId);
     setWidgets(deleteItem);
   };
-
+  const handlePreview = () => {
+    setPreviewToggle((flag) => !flag);
+  };
   return (
-    <div className="bg-zinc-900 text-white  relative min-h-screen">
+    <div className="bg-zinc-900 text-white  relative min-h-screen py-4">
+      <div className="flex justify-end mr-8 my-4">
+        <button
+          onClick={handlePreview}
+          className="bg-white  text-zinc-800 py-2 px-4 rounded-sm"
+        >
+          Preview
+        </button>
+      </div>
       <main className="block  lg:grid  lg:grid-cols-12 gap-4  ">
         <div className="col-span-9 p-4">
           <div className="border-2 border-dashed border-white  rounded-lg text-center lg:min-h-screen flex justify-center items-center">
@@ -93,7 +104,6 @@ const Home = () => {
             <Input handleOnDrag={handleOnDrag} />
             <TextArea handleOnDrag={handleOnDrag} />
             <DateField handleOnDrag={handleOnDrag} />
-            <CheckBox handleOnDrag={handleOnDrag} />
             <NumberField handleOnDrag={handleOnDrag} />
             <Button handleOnDrag={handleOnDrag} />
             <Password handleOnDrag={handleOnDrag} />
@@ -101,6 +111,9 @@ const Home = () => {
           </div>
         </aside>
       </main>
+      {previewToggle && (
+        <PreviewForm setPreviewToggle={setPreviewToggle} allWidgets={widgets} />
+      )}
     </div>
   );
 };
