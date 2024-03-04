@@ -1,8 +1,14 @@
-# React + Vite
+###Simple Drag and Drop form builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tech Stack 
+- React Js
+- Tailwind css
+  
+#### DashBoard
+![image](https://github.com/saketkum11/dragAndDropFormBuilder/assets/46194436/3140008a-1941-4f03-b695-f57bbe6381d3)
 
-Currently, two official plugins are available:
+#### Work Flow
+![image](https://github.com/saketkum11/dragAndDropFormBuilder/assets/46194436/3b475704-ca59-4dc2-86b8-4db6a83774d8)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Preview Section
+![image](https://github.com/saketkum11/dragAndDropFormBuilder/assets/46194436/21ef9265-56db-4eef-b8e2-7979e98c5674)
