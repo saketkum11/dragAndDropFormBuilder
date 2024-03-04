@@ -1,0 +1,29 @@
+/* eslint-disable react/prop-types */
+import { IoMdCheckboxOutline } from "react-icons/io";
+import { v4 } from "uuid";
+const CheckBox = ({ handleOnDrag }) => {
+  return (
+    <div
+      draggable
+      onDragStart={(e) => {
+        e.stopPropagation();
+        handleOnDrag({
+          id: v4(),
+          textMessage: "Hello world",
+          title: "CheckBox Field",
+          name: "title",
+          type: "checkbox",
+          isInputField: true,
+          isRequired: true,
+        });
+      }}
+      className="flex flex-col gap-2 overflow-hidden justify-center items-center hover:bg-zinc-800 hover:cursor-grab border border-zinc-500 border-solid px-4 py-8 rounded-lg relative"
+    >
+      <IoMdCheckboxOutline className="text-5xl" />
+      <span>{}</span>
+      <p className="text-center">CheckBox Field</p>
+    </div>
+  );
+};
+
+export default CheckBox;
