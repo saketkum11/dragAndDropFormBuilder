@@ -40,7 +40,7 @@ const Widgets = ({
           onDragEnter={() => onDragEnter(index)}
           onDragEnd={onDragEnd}
           onDragOver={(e) => e.preventDefault()}
-          className="w-full flexflex-col gap-4 text-start border bg-zinc-900 border-zinc-500 border-solid  rounded-md p-4 relative"
+          className="w-full flex flex-col gap-4 text-start border bg-zinc-900 border-zinc-500 border-solid  rounded-md p-4 relative"
         >
           {widget.type !== "button" && (
             <input
@@ -77,7 +77,7 @@ const Widgets = ({
           onDragEnter={(e) => onDragEnter(index)}
           onDragEnd={onDragEnd}
           onDragOver={(e) => e.preventDefault()}
-          className="w-full flex flex-col gap-4 text-start border bg-zinc-900 border-zinc-500 border-solid min-h-12 rounded-md p-4 relative"
+          className="w-full flex flex-col gap-4 text-start border bg-zinc-900 border-zinc-500 border-solid  rounded-md p-4 relative"
         >
           <input
             className="w-full bg-transparent px-4 py-2 outline-none border-b"
