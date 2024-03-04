@@ -3,6 +3,7 @@
 Tech Stack 
 - React Js
 - Tailwind css
+- Responsive website
   
 #### DashBoard
 ![image](https://github.com/saketkum11/dragAndDropFormBuilder/assets/46194436/3140008a-1941-4f03-b695-f57bbe6381d3)
